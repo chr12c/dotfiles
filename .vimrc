@@ -1,5 +1,9 @@
+
 "make vim not try to pretend to be vi
 set nocompatible
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 set number
 syntax enable
@@ -30,8 +34,10 @@ set hidden
 "allows search (:find) down into subfolders
 set path+=**
 
+set wildmenu
+
 "allows faster vim-gitgutter response
-set updatetime=100
+set updatetime=300
 
 "insert mode blinking bar
 let &t_SI = "\e[5 q"
@@ -47,5 +53,33 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'yegappan/lsp'
 call plug#end()
+
+let lspServers = [
+		\     #{
+		\	 filetype: 'sh',
+		\	 path: '/Users/chris/.nvm/versions/node/v10.20.1/bin/bash-language-server',
+		\	 args: ['start']
+		\      },
+		\     #{
+    \	 filetype: ['scala', 'sbt'],
+		\	 path: '/Users/chris/Library/Application Support/Coursier/bin/metals',
+		\	 args: []
+		\      }
+		\   ]
+autocmd VimEnter * call LspAddServer(lspServers)
+
+let lspOpts = {'autoHighlightDiags': v:true}
+autocmd VimEnter * call LspOptionsSet(lspOpts)
+
+noremap <leader>h :LspHover<CR>
+noremap <leader>d :LspPeekDefinition<CR>
+noremap <leader>D :LspGotoDefinition<CR>
+noremap <leader>r :LspPeekReferences<CR>
+noremap <leader>R :LspShowReferences<CR>
+noremap <leader>i :LspPeekImpl<CR>
+noremap <leader>I :LspGotoImpl<CR>
+noremap <leader>f :LspHighlightClear<CR> :LspHighlight<CR>
+noremap <leader>F :LspHighlightClear<CR>
 
