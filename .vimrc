@@ -1,4 +1,3 @@
-
 "make vim not try to pretend to be vi
 set nocompatible
 
