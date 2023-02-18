@@ -36,7 +36,7 @@ set path+=**
 set wildmenu
 
 "allows faster vim-gitgutter response
-set updatetime=300
+set updatetime=100
 
 "insert mode blinking bar
 let &t_SI = "\e[5 q"
