@@ -41,13 +41,13 @@ map("n", "<leader>aw", function()
 end)
 
 -- buffer diagnostics only
-map("n", "<leader>d", vim.diagnostic.setloclist)
+map("n", "<leader>db", vim.diagnostic.setloclist)
 
-map("n", "[c", function()
+map("n", "[d", function()
   vim.diagnostic.goto_prev({ wrap = false })
 end)
 
-map("n", "]c", function()
+map("n", "]d", function()
   vim.diagnostic.goto_next({ wrap = false })
 end)
 
