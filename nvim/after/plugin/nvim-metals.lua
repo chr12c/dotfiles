@@ -9,9 +9,9 @@ local map = vim.keymap.set
 vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 
 -- LSP mappings
-map("n", "K",  vim.lsp.buf.hover)
-map("n", "<leader>gd",  vim.lsp.buf.definition)
-map("n", "<leader>gD",  vim.lsp.buf.declaration)
+map("n", "K", vim.lsp.buf.hover)
+map("n", "<leader>gd", vim.lsp.buf.definition)
+map("n", "<leader>gD", vim.lsp.buf.declaration)
 map("n", "<leader>gi", vim.lsp.buf.implementation)
 map("n", "<leader>go", vim.lsp.buf.type_definition)
 map("n", "<leader>gr", vim.lsp.buf.references)
@@ -138,4 +138,3 @@ api.nvim_create_autocmd("FileType", {
   end,
   group = nvim_metals_group,
 })
-
