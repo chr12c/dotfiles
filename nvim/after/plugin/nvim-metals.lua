@@ -20,7 +20,7 @@ map("n", "<leader>gws", vim.lsp.buf.workspace_symbol)
 map("n", "<leader>cl", vim.lsp.codelens.run)
 map("n", "<C-k>sh", vim.lsp.buf.signature_help)
 map("n", "<F2>", vim.lsp.buf.rename)
-map("n", "<leader>f", vim.lsp.buf.formatting)
+map("n", "<leader>f", vim.lsp.buf.format)
 map("n", "<F4>", vim.lsp.buf.code_action)
 
 map("n", "<leader>ws", function()
