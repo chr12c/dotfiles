@@ -4,7 +4,7 @@ set nocompatible
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-set number
+set relativenumber
 syntax enable
 
 "attempt to determine type of file and use intelligent auto-indenting,
