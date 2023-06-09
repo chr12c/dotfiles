@@ -2,7 +2,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'jiangmiao/auto-pairs'
+  -- use 'jiangmiao/auto-pairs'
   use 'airblade/vim-gitgutter'
   use 'vim-airline/vim-airline'
   use 'tpope/vim-commentary'
