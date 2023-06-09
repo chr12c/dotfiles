@@ -48,7 +48,7 @@ set background=dark
 
 "vim-plug settings and user specific plugins stored in /.vim/autoload
 call plug#begin('~/.vim/plugged')
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
