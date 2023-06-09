@@ -14,9 +14,8 @@ return require('packer').startup(function(use)
     },
     --    tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
-  use {
-    'akinsho/bufferline.nvim', tag = "v3.*",
-    requires = 'nvim-tree/nvim-web-devicons'
+  use { 'alvarosevilla95/luatab.nvim',
+    requires='nvim-tree/nvim-web-devicons'
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
