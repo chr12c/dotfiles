@@ -48,6 +48,8 @@ let &t_EI = "\e[1 q"
 "inside tmux, vim does not detect dark background
 set background=dark
 
+nnoremap <leader>e :Explore<CR>
+
 "vim-plug settings and user specific plugins stored in /.vim/autoload
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
