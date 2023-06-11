@@ -6,13 +6,6 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    --    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
   use { 'alvarosevilla95/luatab.nvim',
     requires = 'nvim-tree/nvim-web-devicons'
   }
