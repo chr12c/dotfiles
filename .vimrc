@@ -6,7 +6,9 @@ let mapleader=" "
 
 set backspace=indent,eol,start
 
+set number
 set relativenumber
+
 syntax enable
 
 "attempt to determine type of file and use intelligent auto-indenting,
