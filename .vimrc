@@ -27,7 +27,7 @@ set hlsearch
 set incsearch
 set cursorline
 set ruler
-set laststatus=2
+set laststatus=1
 
 "allow buffer switching without saving
 set hidden
