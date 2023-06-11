@@ -16,6 +16,11 @@ telescope.setup {
       hidden = true,
       no_ignore = true
     }
+  },
+  extensions = {
+    file_browser = {
+      hidden = true
+    }
   }
 }
 
