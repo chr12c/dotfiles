@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
   use 'ntpeters/vim-better-whitespace'
   use {
     'nvim-telescope/telescope.nvim' ,
-    tag = '0.1.1',
+    tag = '0.1.3',
     requires = {
       { 'nvim-lua/plenary.nvim' },      -- required
       { 'nvim-tree/nvim-web-devicons' } -- optional
