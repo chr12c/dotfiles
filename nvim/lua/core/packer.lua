@@ -7,13 +7,13 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
   use 'ntpeters/vim-better-whitespace'
-  use { 'alvarosevilla95/luatab.nvim',
-    requires = 'nvim-tree/nvim-web-devicons'
-  }
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    -- or                            , branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    'nvim-telescope/telescope.nvim' ,
+    tag = '0.1.1',
+    requires = {
+      { 'nvim-lua/plenary.nvim' },      -- required
+      { 'nvim-tree/nvim-web-devicons' } -- optional
+    }
   }
   use('ThePrimeagen/harpoon')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -22,21 +22,21 @@ return require('packer').startup(function(use)
     branch = 'v1.x',
     requires = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig' },             -- Required
-      { 'williamboman/mason.nvim' },           -- Optional
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+      { 'neovim/nvim-lspconfig' },             -- required
+      { 'williamboman/mason.nvim' },           -- optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },         -- Required
-      { 'hrsh7th/cmp-nvim-lsp' },     -- Required
-      { 'hrsh7th/cmp-buffer' },       -- Optional
-      { 'hrsh7th/cmp-path' },         -- Optional
-      { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-      { 'hrsh7th/cmp-nvim-lua' },     -- Optional
+      { 'hrsh7th/nvim-cmp' },         -- required
+      { 'hrsh7th/cmp-nvim-lsp' },     -- required
+      { 'hrsh7th/cmp-buffer' },       -- optional
+      { 'hrsh7th/cmp-path' },         -- optional
+      { 'saadparwaiz1/cmp_luasnip' }, -- optional
+      { 'hrsh7th/cmp-nvim-lua' },     -- optional
 
       -- Snippets
-      { 'L3MON4D3/LuaSnip' },             -- Required
-      { 'rafamadriz/friendly-snippets' }, -- Optional
+      { 'L3MON4D3/LuaSnip' },             -- required
+      { 'rafamadriz/friendly-snippets' }, -- optional
     }
   }
   use {
