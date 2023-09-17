@@ -24,3 +24,5 @@ vim.opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700
 
 --netrw defaults excluding 'nonu', so falls back to vim number settings
 vim.g.netrw_bufsettings = 'noma nomod nowrap ro nobl'
+
+vim.cmd.highlight('SignColumn ctermbg=none')
