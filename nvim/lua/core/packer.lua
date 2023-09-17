@@ -6,6 +6,7 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
+  use 'ntpeters/vim-better-whitespace'
   use { 'alvarosevilla95/luatab.nvim',
     requires = 'nvim-tree/nvim-web-devicons'
   }
