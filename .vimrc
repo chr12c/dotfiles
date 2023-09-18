@@ -40,7 +40,7 @@ set path+=**
 set wildmenu
 
 "allows faster vim-gitgutter response
-set updatetime=100
+set updatetime=50
 
 "insert mode blinking bar
 let &t_SI = "\e[5 q"
@@ -51,6 +51,7 @@ let &t_EI = "\e[1 q"
 set background=dark
 
 nnoremap <leader>e :Explore<CR>
+let g:netrw_bufsettings = 'noma nomod nowrap ro nobl'
 
 "vim-plug settings and user specific plugins stored in /.vim/autoload
 call plug#begin('~/.vim/plugged')
