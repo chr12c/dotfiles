@@ -30,6 +30,7 @@ set incsearch
 set cursorline
 set ruler
 set laststatus=1
+set belloff=all
 
 "allow buffer switching without saving
 set hidden
