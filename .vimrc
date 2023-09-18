@@ -31,6 +31,7 @@ set cursorline
 set ruler
 set laststatus=1
 set belloff=all
+set scrolloff=1
 
 "allow buffer switching without saving
 set hidden

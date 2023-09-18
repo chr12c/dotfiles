@@ -17,6 +17,8 @@ vim.opt.incsearch = true
 
 vim.opt.cursorline = true
 
+vim.opt.scrolloff = 1
+
 --allows faster vim-gitgutter response
 vim.opt.updatetime = 50
 
