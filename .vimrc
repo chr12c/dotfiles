@@ -44,8 +44,6 @@ set wildmenu
 "allows faster vim-gitgutter response
 set updatetime=50
 
-"insert mode blinking bar
-let &t_SI = "\e[5 q"
 "non-insert mode blinking block
 let &t_EI = "\e[1 q"
 

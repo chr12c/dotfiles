@@ -22,7 +22,7 @@ vim.opt.scrolloff = 1
 --allows faster vim-gitgutter response
 vim.opt.updatetime = 50
 
-vim.opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175'
+vim.opt.guicursor = 'a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175'
 
 --netrw defaults excluding 'nonu', so falls back to vim number settings
 vim.g.netrw_bufsettings = 'noma nomod nowrap ro nobl'
