@@ -27,7 +27,6 @@ set noundofile
 set nobackup
 set hlsearch
 set incsearch
-set cursorline
 set ruler
 set laststatus=1
 set belloff=all
