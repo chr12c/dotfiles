@@ -23,6 +23,8 @@ map("n", "<F2>", vim.lsp.buf.rename)
 map("n", "<F3>", vim.lsp.buf.format)
 map("n", "<F4>", vim.lsp.buf.code_action)
 
+map("n", "<leader>gl", vim.diagnostic.open_float)
+
 map("n", "<leader>ws", function()
   require("metals").hover_worksheet()
 end)
