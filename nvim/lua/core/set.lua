@@ -22,6 +22,9 @@ vim.opt.updatetime = 50
 
 vim.opt.guicursor = 'a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175'
 
+vim.opt.listchars = 'trail:∘'
+vim.opt.list = true
+
 --netrw defaults excluding 'nonu', so falls back to vim number settings
 vim.g.netrw_bufsettings = 'noma nomod nowrap ro nobl'
 

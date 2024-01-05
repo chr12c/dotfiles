@@ -6,7 +6,6 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
-  use 'ntpeters/vim-better-whitespace'
   use {
     'nvim-telescope/telescope.nvim' ,
     tag = '0.1.3',
