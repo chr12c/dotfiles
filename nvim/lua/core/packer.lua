@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use {
     'nvim-telescope/telescope.nvim' ,
-    tag = '0.1.3',
+    tag = '0.1.5',
     requires = {
       { 'nvim-lua/plenary.nvim' },      -- required
       { 'nvim-tree/nvim-web-devicons' } -- optional
