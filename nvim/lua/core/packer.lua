@@ -6,7 +6,6 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
-  use 'nvim-tree/nvim-tree.lua'
   use {
     'nvim-telescope/telescope.nvim' ,
     tag = '0.1.3',
@@ -14,6 +13,10 @@ return require('packer').startup(function(use)
       { 'nvim-lua/plenary.nvim' },      -- required
       { 'nvim-tree/nvim-web-devicons' } -- optional
     }
+  }
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
   use('ThePrimeagen/harpoon')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
