@@ -1,22 +1,25 @@
-local lsp = require('lsp-zero').preset({
-  name = 'minimal',
-  manage_nvim_cmp = true,
-  suggest_lsp_servers = false,
-})
-
--- (Optional) Configure lua language server for neovim
-lsp.nvim_workspace()
-
 local cmp = require('cmp')
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ["<CR>"] = cmp.config.disable
+
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    ['<C-p>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_prev_item({behavior = 'select'})
+      else
+        cmp.complete()
+      end
+    end),
+    ['<C-n>'] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_next_item({behavior = 'select'})
+      else
+        cmp.complete()
+      end
+    end)
+  })
 })
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
-
-lsp.setup()
+require('lsp-zero').setup()
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(

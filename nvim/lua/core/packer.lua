@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    branch = 'v3.x',
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' },             -- required
@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
 
       -- Snippets
       { 'L3MON4D3/LuaSnip' },             -- required
-      { 'rafamadriz/friendly-snippets' }, -- optional
+      { 'rafamadriz/friendly-snippets' }  -- optional
     }
   }
   use {
@@ -47,7 +47,7 @@ return require('packer').startup(function(use)
     requires = {
       "nvim-lua/plenary.nvim",
       "mfussenegger/nvim-dap",
-    },
+    }
   }
   use({
     'rose-pine/neovim',
