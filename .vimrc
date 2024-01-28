@@ -46,9 +46,6 @@ set updatetime=50
 "non-insert mode blinking block
 let &t_EI = "\e[1 q"
 
-"inside tmux, vim does not detect dark background
-set background=dark
-
 nnoremap <leader>e :Explore<CR>
 let g:netrw_bufsettings = 'noma nomod nowrap ro nobl'
 
