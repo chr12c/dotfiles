@@ -6,6 +6,7 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
+  use 'mbbill/undotree'
   use {
     'nvim-telescope/telescope.nvim' ,
     tag = '0.1.5',
