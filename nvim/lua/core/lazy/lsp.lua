@@ -15,11 +15,11 @@ return {
       ensure_installs = {
         "lua_ls"
       },
-      -- handlers = {
-      --   function(server_name)
-      --     require("lspconfig")[server_name].setup{}
-      --   end
-      -- }
+      handlers = {
+        function(server_name)
+          require("lspconfig")[server_name].setup{}
+        end
+      }
     })
   end
 }
