@@ -41,7 +41,7 @@ return {
         map("n", '<leader>iB', gitsigns.toggle_current_line_blame)
         -- map("n", "<leader>id", gitsigns.diffthis)
         -- map("n", '<leader>iD', function() gitsigns.diffthis('~') end)
-        -- map('n', '<leader>td', gitsigns.toggle_deleted)
+        map("n", "<leader>it", gitsigns.toggle_deleted)
       end
 
     })
