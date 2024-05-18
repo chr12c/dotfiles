@@ -1,3 +1,2 @@
 require("core.set")
-require("core.remap")
-require("core.packer")
+require("core.lazy_init")
