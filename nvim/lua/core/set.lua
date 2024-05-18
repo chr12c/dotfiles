@@ -28,4 +28,4 @@ vim.opt.list = true
 --netrw defaults excluding 'nonu', so falls back to vim number settings
 vim.g.netrw_bufsettings = 'noma nomod nowrap ro nobl'
 
-vim.cmd.highlight('SignColumn ctermbg=none')
+-- vim.cmd.highlight('SignColumn ctermbg=none')
