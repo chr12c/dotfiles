@@ -17,7 +17,6 @@ vim.opt.incsearch = true
 
 vim.opt.scrolloff = 1
 
---allows faster vim-gitgutter response
 vim.opt.updatetime = 50
 
 vim.opt.guicursor = 'a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175'
@@ -27,5 +26,3 @@ vim.opt.list = true
 
 --netrw defaults excluding 'nonu', so falls back to vim number settings
 vim.g.netrw_bufsettings = 'noma nomod nowrap ro nobl'
-
--- vim.cmd.highlight('SignColumn ctermbg=none')

@@ -40,7 +40,6 @@ set path+=**
 
 set wildmenu
 
-"allows faster vim-gitgutter response
 set updatetime=50
 
 "non-insert mode blinking block
