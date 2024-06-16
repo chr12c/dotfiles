@@ -42,9 +42,6 @@ set wildmenu
 
 set updatetime=50
 
-"non-insert mode blinking block
-let &t_EI = "\e[1 q"
-
 nnoremap <leader>e :Explore<CR>
 let g:netrw_bufsettings = 'noma nomod nowrap ro nobl'
 
