@@ -1,4 +1,3 @@
-"make vim not try to pretend to be vi
 set nocompatible
 
 nnoremap <SPACE> <Nop>
@@ -15,24 +14,27 @@ syntax enable
 "combination of filetype on, filetype plugin on, filetype indent on
 filetype plugin indent on
 
+set autoindent
+
 set expandtab
 set tabstop=2
 set shiftwidth=2
-set mouse=a
 
-"show partial commands in last line of screen
-set showcmd
+set mouse=a
 
 set noundofile
 set nobackup
+
 set hlsearch
 set incsearch
+set ignorecase
+set smartcase
+
 set ruler
 set laststatus=1
 set belloff=all
 set scrolloff=1
 
-"allow buffer switching without saving
 set hidden
 
 "allows search (:find) down into subfolders
