@@ -13,7 +13,8 @@ vim.opt.undofile = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.scrolloff = 1
 
