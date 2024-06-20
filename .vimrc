@@ -24,6 +24,7 @@ set mouse=a
 
 set noundofile
 set nobackup
+set noswapfile
 
 set hlsearch
 set incsearch
