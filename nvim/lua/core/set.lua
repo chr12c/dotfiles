@@ -24,7 +24,7 @@ vim.opt.guicursor = ''
 
 vim.opt.termguicolors = true
 
-vim.opt.listchars = 'trail:∘'
+vim.opt.listchars = { tab = '» ', trail = '∘' }
 vim.opt.list = true
 
 --netrw defaults excluding 'nonu', so falls back to vim number settings
