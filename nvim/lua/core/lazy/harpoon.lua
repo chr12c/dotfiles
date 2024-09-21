@@ -1,21 +1,34 @@
 return {
   "ThePrimeagen/harpoon",
+  branch = "harpoon2",
+  dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require('telescope').setup({
-      menu = {
-        width = vim.api.nvim_win_get_width(0) - 4,
-      }
+    local harpoon = require("harpoon")
+
+    harpoon.setup()
+
+    vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
+    vim.keymap.set("n", "<leader>ht", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+    vim.keymap.set("n", "<leader>h1", function() harpoon:list():select(1) end)
+    vim.keymap.set("n", "<leader>h2", function() harpoon:list():select(2) end)
+    vim.keymap.set("n", "<leader>h3", function() harpoon:list():select(3) end)
+    vim.keymap.set("n", "<leader>h4", function() harpoon:list():select(4) end)
+
+    harpoon:extend({
+      UI_CREATE = function(cx)
+        vim.keymap.set("n", "<C-v>", function()
+          harpoon.ui:select_menu_item({ vsplit = true })
+        end, { buffer = cx.bufnr })
+
+        vim.keymap.set("n", "<C-x>", function()
+          harpoon.ui:select_menu_item({ split = true })
+        end, { buffer = cx.bufnr })
+
+        vim.keymap.set("n", "<C-t>", function()
+          harpoon.ui:select_menu_item({ tabedit = true })
+        end, { buffer = cx.bufnr })
+      end,
     })
-
-    local mark = require("harpoon.mark")
-    local ui = require("harpoon.ui")
-
-    vim.keymap.set("n", "<leader>ha", mark.add_file)
-    vim.keymap.set("n", "<leader>ht", ui.toggle_quick_menu)
-
-    vim.keymap.set("n", "<leader>h1", function() ui.nav_file(1) end)
-    vim.keymap.set("n", "<leader>h2", function() ui.nav_file(2) end)
-    vim.keymap.set("n", "<leader>h3", function() ui.nav_file(3) end)
-    vim.keymap.set("n", "<leader>h4", function() ui.nav_file(4) end)
   end
 }
