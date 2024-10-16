@@ -17,11 +17,23 @@ return {
     require("mason").setup({})
     require("mason-lspconfig").setup({
       ensure_installs = {
-        "lua_ls"
+        "lua_ls",
+        "gopls"
       },
       handlers = {
         function(server_name)
           require("lspconfig")[server_name].setup{}
+        end,
+
+        ["gopls"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.gopls.setup {
+            settings = {
+              gopls = {
+                buildFlags = { "-tags=unit,integration,decoupled" }
+              }
+            }
+          }
         end
       }
     })
