@@ -37,10 +37,9 @@ return {
       local word = vim.fn.expand("<cWORD>")
       builtin.grep_string({ search = word })
     end)
-    vim.keymap.set("n", "<leader>fs", function()
-      builtin.grep_string({ search = vim.fn.input("Grep > ") });
-    end)
+    vim.keymap.set("n", "<leader>fs", builtin.live_grep, {})
     vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
     vim.keymap.set("n", "<leader>fm", builtin.marks, {})
+    vim.keymap.set("n", "<leader>fr", builtin.resume, {})
   end
 }
