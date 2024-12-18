@@ -30,7 +30,7 @@ return {
           lspconfig.gopls.setup {
             settings = {
               gopls = {
-                buildFlags = { "-tags=unit,integration,decoupled" }
+                buildFlags = { "-tags=unit,integration,decoupled,functional" }
               }
             }
           }
