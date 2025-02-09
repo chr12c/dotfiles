@@ -8,15 +8,16 @@ return {
           italic = false
         }
       })
-
-      -- vim.cmd("colorscheme rose-pine")
     end
   },
   {
-    "EdenEast/nightfox.nvim",
-    name = "nightfox",
+    "maxmx03/solarized.nvim",
+    name = "solarized",
     config = function()
-      vim.cmd("colorscheme terafox")
+      require("solarized").setup({
+        variant = "spring"
+      })
+      vim.cmd("colorscheme solarized")
     end
   }
 }
