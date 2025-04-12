@@ -12,6 +12,9 @@ return {
     "saadparwaiz1/cmp_luasnip",
   },
   config = function()
+    vim.diagnostic.config({ virtual_text = true })
+    vim.o.winborder = 'single'
+
     local cmp = require("cmp")
 
     require("mason").setup({})
