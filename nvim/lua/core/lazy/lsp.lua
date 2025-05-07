@@ -1,46 +1,33 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason.nvim",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
     "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-cmdline",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
   },
   config = function()
-    vim.diagnostic.config({ virtual_text = true })
-    vim.o.winborder = 'single'
-
-    local cmp = require("cmp")
-
     require("mason").setup({})
-    require("mason-lspconfig").setup({
-      ensure_installs = {
-        "lua_ls",
-        "gopls"
-      },
-      handlers = {
-        function(server_name)
-          require("lspconfig")[server_name].setup{}
-        end,
 
-        ["gopls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.gopls.setup {
-            settings = {
-              gopls = {
-                buildFlags = { "-tags=unit,integration,decoupled,functional" }
-              }
-            }
-          }
-        end
+    vim.diagnostic.config({ virtual_text = true })
+    vim.o.winborder = "single"
+    vim.lsp.config.gopls = {
+      settings = {
+        gopls = {
+          buildFlags = { "-tags=unit,integration,decoupled,functional" }
+        }
       }
+    }
+    vim.lsp.enable({
+      "gopls",
+      "lua_ls",
+      "pylsp",
+      "rust_analyzer"
     })
 
+    local cmp = require("cmp")
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -50,14 +37,14 @@ return {
       mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping(function()
           if cmp.visible() then
-            cmp.select_prev_item({behavior = "select"})
+            cmp.select_prev_item({ behavior = "select" })
           else
             cmp.complete()
           end
         end),
         ["<C-n>"] = cmp.mapping(function()
           if cmp.visible() then
-            cmp.select_next_item({behavior = "select"})
+            cmp.select_next_item({ behavior = "select" })
           else
             cmp.complete()
           end
