@@ -24,11 +24,6 @@ return {
           no_ignore = true
         }
       },
-      extensions = {
-        file_browser = {
-          hidden = { file_browser = true, folder_browser = true }
-        }
-      }
     })
 
     local builtin = require("telescope.builtin")
