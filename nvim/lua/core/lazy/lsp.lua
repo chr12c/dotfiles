@@ -24,7 +24,8 @@ return {
       "gopls",
       "lua_ls",
       "pylsp",
-      "rust_analyzer"
+      "rust_analyzer",
+      "terraformls",
     })
 
     local cmp = require("cmp")
