@@ -14,6 +14,8 @@ vim.opt.backup = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.path:append("**")
+
 vim.opt.scrolloff = 1
 
 vim.opt.updatetime = 50
