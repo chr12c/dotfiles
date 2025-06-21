@@ -38,10 +38,10 @@ set scrolloff=1
 
 set hidden
 
-"allows search (:find) down into subfolders
+"allows searching into subdirectories recursively
 set path+=**
 
-set wildmenu
+set wildoptions=pum,tagfile
 
 set updatetime=50
 
