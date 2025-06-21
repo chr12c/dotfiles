@@ -5,12 +5,18 @@ return {
   keys = function()
     local harpoon = require("harpoon")
     return {
-      { "<leader>ha", function() harpoon:list():add() end },
-      { "<leader>ht", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end },
-      { "<leader>h1", function() harpoon:list():select(1) end },
-      { "<leader>h2", function() harpoon:list():select(2) end },
-      { "<leader>h3", function() harpoon:list():select(3) end },
-      { "<leader>h4", function() harpoon:list():select(4) end }
+      { "<leader>ha", function() harpoon:list():add() end,     desc = "Add file to harpoon" },
+      {
+        "<leader>ht",
+        function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+        desc = "Toggle harpoon"
+      },
+      { "<leader>h1", function() harpoon:list():select(1) end, desc = "Select 1st harpoon item" },
+      { "<leader>h2", function() harpoon:list():select(2) end, desc = "Select 2nd harpoon item" },
+      { "<leader>h3", function() harpoon:list():select(3) end, desc = "Select 3rd harpoon item" },
+      { "<leader>h4", function() harpoon:list():select(4) end, desc = "Select 4th harpoon item" },
+      { "<leader>hp", function() harpoon:list():prev() end,    desc = "Select previous harpoon item" },
+      { "<leader>hn", function() harpoon:list():next() end,    desc = "Select next harpoon item" }
     }
   end,
   config = function()
