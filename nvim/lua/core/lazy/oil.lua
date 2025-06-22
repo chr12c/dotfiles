@@ -17,21 +17,17 @@ return {
   -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
   lazy         = false,
   keys         = function()
-    local oil = require("oil")
     return {
       {
         "<leader>oo",
-        oil.open,
+        require("oil").open,
         desc = "Open oil in parent dir of current buffer or cwd if not a file"
       },
       {
         "<leader>op",
-        function() oil.open(vim.fn.getcwd()) end,
+        function() require("oil").open(vim.fn.getcwd()) end,
         desc = "Open oil in cwd"
       },
     }
-  end,
-  config       = function(_, opts)
-    require("oil").setup(opts)
   end
 }
