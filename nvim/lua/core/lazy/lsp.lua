@@ -5,8 +5,6 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/nvim-cmp",
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
   },
   config = function()
     require("mason").setup({})
@@ -30,11 +28,6 @@ return {
 
     local cmp = require("cmp")
     cmp.setup({
-      snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-        end
-      },
       mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping(function()
           if cmp.visible() then
@@ -53,8 +46,6 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "luasnip" }, -- For luasnip users.
-      }, {
         { name = "buffer" },
       })
     })
