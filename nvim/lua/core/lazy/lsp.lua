@@ -2,12 +2,9 @@ return {
   "neovim/nvim-lspconfig",
   dependencies = {
     "mason-org/mason.nvim",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/nvim-cmp",
   },
   config = function()
-    require("mason").setup({})
+    require("mason").setup()
 
     vim.diagnostic.config({ virtual_text = true })
     vim.o.winborder = "single"
@@ -18,6 +15,19 @@ return {
         }
       }
     }
+
+    vim.lsp.config.lua_ls = {
+      settings = {
+        Lua = {
+          diagnostics = { globals = { "vim" } },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false
+          }
+        }
+      }
+    }
+
     vim.lsp.enable({
       "gopls",
       "lua_ls",
@@ -26,28 +36,13 @@ return {
       "terraformls",
     })
 
-    local cmp = require("cmp")
-    cmp.setup({
-      mapping = cmp.mapping.preset.insert({
-        ["<C-p>"] = cmp.mapping(function()
-          if cmp.visible() then
-            cmp.select_prev_item({ behavior = "select" })
-          else
-            cmp.complete()
-          end
-        end),
-        ["<C-n>"] = cmp.mapping(function()
-          if cmp.visible() then
-            cmp.select_next_item({ behavior = "select" })
-          else
-            cmp.complete()
-          end
-        end)
-      }),
-      sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "buffer" },
-      })
+    vim.api.nvim_create_autocmd("LspAttach", {
+      callback = function(ev)
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if client:supports_method("textDocument/completion") then
+          vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+        end
+      end
     })
   end
 }

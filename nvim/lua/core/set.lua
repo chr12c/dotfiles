@@ -16,6 +16,8 @@ vim.opt.smartcase = true
 
 vim.opt.path:append("**")
 
+vim.opt.completeopt:append({ "menuone", "noselect", "fuzzy" })
+
 vim.opt.scrolloff = 1
 
 vim.opt.updatetime = 50
