@@ -52,5 +52,5 @@ let g:netrw_bufsettings = 'noma nomod nowrap ro nobl'
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 call plug#end()
-
