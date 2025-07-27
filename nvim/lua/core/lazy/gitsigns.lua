@@ -17,17 +17,17 @@ return {
         function() gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v"), }) end,
         desc = "Git reset highlighted hunk"
       },
-      { "<leader>iu", gitsigns.undo_stage_hunk, desc = "Git undo stage hunk" },
-      { "<leader>iS", gitsigns.stage_buffer,    desc = "Git stage buffer" },
-      { "<leader>iR", gitsigns.reset_buffer,    desc = "Git reset buffer" },
-      { "<leader>ip", gitsigns.preview_hunk,    desc = "Git preview hunk" },
+      { "<leader>iS", gitsigns.stage_buffer, desc = "Git stage buffer" },
+      { "<leader>iR", gitsigns.reset_buffer, desc = "Git reset buffer" },
+      { "<leader>ip", gitsigns.preview_hunk, desc = "Git preview hunk" },
+      { "<leader>ib", gitsigns.blame,        desc = "Git blame" },
       {
-        "<leader>ib",
+        "<leader>iB",
         function() gitsigns.blame_line({ full = true }) end,
         desc = "Git blame line"
       },
-      { "<leader>iB", gitsigns.toggle_current_line_blame, desc = "Git toggle current line blame" },
-      { "<leader>it", gitsigns.toggle_deleted,            desc = "Git toggle deleted" },
+      { "<leader>id", function() gitsigns.diffthis("@") end,      desc = "Git diff against HEAD" },
+      { "<leader>iD", function() gitsigns.diffthis("master") end, desc = "Git diff against master" }
     }
   end,
   config = function()
