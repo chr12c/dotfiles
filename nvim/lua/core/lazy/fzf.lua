@@ -17,16 +17,21 @@ return {
       { "<leader>fl",  function() require("fzf-lua").live_grep() end,      desc = "Live grep project" },
       { "<leader>fw",  function() require("fzf-lua").grep_cword() end,     desc = "Search word under cursor" },
       { "<leader>fW",  function() require("fzf-lua").grep_cWORD() end,     desc = "Search WORD under cursor" },
-      { "<leader>fv",  function() require("fzf-lua").grep_visual() end,    desc = "Search visual selection" },
-      { "<leader>fg",  function() require("fzf-lua").git_files() end,      desc = "Find git files in cwd" },
-      { "<leader>fGs", function() require("fzf-lua").git_status() end,     desc = "Open fzf git status" },
-      { "<leader>fGS", function() require("fzf-lua").git_stash() end,      desc = "Open fzf git stash" },
-      { "<leader>fGl", function() require("fzf-lua").git_commits() end,    desc = "Open fzf git commit log (project)" },
-      { "<leader>fGc", function() require("fzf-lua").git_bcommits() end,   desc = "Open fzf git commit log (buffer)" },
-      { "<leader>fGb", function() require("fzf-lua").git_branches() end,   desc = "Open fzf git branches" },
-      { "<leader>fGt", function() require("fzf-lua").git_tags() end,       desc = "Open fzf git tags" },
-      { "<leader>fr",  function() require("fzf-lua").resume() end,         desc = "Resume last fzf command/query" },
-      { "<leader>fm",  function() require("fzf-lua").marks() end,          desc = "Open fzf marks" },
+      {
+        "<leader>fv",
+        mode = { "n", "v" },
+        function() require("fzf-lua").grep_visual() end,
+        desc = "Search visual selection"
+      },
+      { "<leader>fg",  function() require("fzf-lua").git_files() end,    desc = "Find git files in cwd" },
+      { "<leader>fGs", function() require("fzf-lua").git_status() end,   desc = "Open fzf git status" },
+      { "<leader>fGS", function() require("fzf-lua").git_stash() end,    desc = "Open fzf git stash" },
+      { "<leader>fGl", function() require("fzf-lua").git_commits() end,  desc = "Open fzf git commit log (project)" },
+      { "<leader>fGc", function() require("fzf-lua").git_bcommits() end, desc = "Open fzf git commit log (buffer)" },
+      { "<leader>fGb", function() require("fzf-lua").git_branches() end, desc = "Open fzf git branches" },
+      { "<leader>fGt", function() require("fzf-lua").git_tags() end,     desc = "Open fzf git tags" },
+      { "<leader>fr",  function() require("fzf-lua").resume() end,       desc = "Resume last fzf command/query" },
+      { "<leader>fm",  function() require("fzf-lua").marks() end,        desc = "Open fzf marks" },
     }
   end
 }
