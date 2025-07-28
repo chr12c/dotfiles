@@ -16,6 +16,7 @@ vim.opt.smartcase = true
 
 vim.opt.path:append("**")
 
+vim.opt.wildmode="noselect:full"
 vim.opt.completeopt:append({ "menuone", "noselect", "fuzzy" })
 
 vim.opt.scrolloff = 1
