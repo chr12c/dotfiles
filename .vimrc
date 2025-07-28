@@ -41,7 +41,9 @@ set hidden
 "allows searching into subdirectories recursively
 set path+=**
 
+set wildmode=noselect:full
 set wildoptions=pum,tagfile
+set completeopt+=menuone,noselect,fuzzy
 
 set updatetime=50
 
