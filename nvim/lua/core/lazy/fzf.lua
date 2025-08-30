@@ -1,11 +1,24 @@
 return {
   "ibhagwan/fzf-lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = {
-    files = {
-      no_ignore = true
-    },
-  },
+  opts = function()
+    local actions = require("fzf-lua").actions
+    return {
+      files = {
+        no_ignore = true
+      },
+      git = {
+        status = {
+          actions = {
+            ["right"] = false,
+            ["left"] = false,
+            ["ctrl-h"] = { fn = actions.git_stage, reload = true },
+            ["ctrl-l"] = { fn = actions.git_unstage, reload = true },
+          }
+        }
+      }
+    }
+  end,
   lazy = true,
   keys = function()
     return {
@@ -32,6 +45,7 @@ return {
       { "<leader>fGt", function() require("fzf-lua").git_tags() end,     desc = "Open fzf git tags" },
       { "<leader>fr",  function() require("fzf-lua").resume() end,       desc = "Resume last fzf command/query" },
       { "<leader>fm",  function() require("fzf-lua").marks() end,        desc = "Open fzf marks" },
+      { "<leader>fR",  function() require("fzf-lua").registers() end,    desc = "Open fzf registers" },
     }
   end
 }
