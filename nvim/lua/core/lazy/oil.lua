@@ -19,12 +19,12 @@ return {
   keys         = function()
     return {
       {
-        "<leader>oo",
+        "<leader>ee",
         require("oil").open,
         desc = "Open oil in parent dir of current buffer or cwd if not a file"
       },
       {
-        "<leader>op",
+        "<leader>ep",
         function() require("oil").open(vim.fn.getcwd()) end,
         desc = "Open oil in cwd"
       },
