@@ -39,6 +39,12 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+        if not client then
+          vim.notify("LSP client not found for client ID: " .. ev.data.client_id, vim.log.levels.WARN)
+          return
+        end
+
         if client:supports_method("textDocument/completion") then
           vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
         end
