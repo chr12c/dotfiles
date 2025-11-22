@@ -32,7 +32,7 @@ set ignorecase
 set smartcase
 
 set ruler
-set laststatus=1
+set laststatus=2
 set belloff=all
 set scrolloff=1
 
@@ -55,4 +55,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'junegunn/seoul256.vim'
 call plug#end()
+
+color seoul256
