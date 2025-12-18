@@ -1,51 +1,42 @@
 return {
+  -- requires tree-sitter-cli
   "nvim-treesitter/nvim-treesitter",
-  -- build = ":TSUpdate",
+  branch = "main",
   config = function()
-    require("nvim-treesitter.configs").setup({
-      -- A list of parser names, or "all"
-      ensure_installed = {
-        -- "bash",
-        -- "java",
-        -- "javascript",
-        -- "lua",
-        -- "python",
-        -- "scala",
-        -- "vim",
-        -- "vimdoc"
-      },
+    require("nvim-treesitter").install {
+      "bash",
+      "go",
+      "gomod",
+      "gosum",
+      "java",
+      "javascript",
+      "lua",
+      "make",
+      "python",
+      "scala",
+      "vim",
+      "vimdoc"
+    }
 
-      -- Install parsers synchronously (only applied to `ensure_installed`)
-      sync_install = false,
+    local group = vim.api.nvim_create_augroup("TreesitterSetup", { clear = true })
 
-      -- Automatically install missing parsers when entering buffer
-      -- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
-      auto_install = true,
+    vim.api.nvim_create_autocmd("FileType", {
+      group = group,
+      desc = "Enable TreeSitter highlighting",
+      callback = function(ev)
+        local ft = ev.match
+        local buf = ev.buf
 
-      highlight = {
-        -- `false` will disable the whole extension
-        enable = true,
+        -- Skip large files (>100KB)
+        local max_filesize = 100 * 1024
+        local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+          return
+        end
 
-        -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-        -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-        -- the name of the parser)
-        -- list of language that will be disabled
-        -- disable = { "c", "rust" },
-        -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-        disable = function(lang, buf)
-          local max_filesize = 100 * 1024 -- 100 KB
-          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-          if ok and stats and stats.size > max_filesize then
-            return true
-          end
-        end,
-
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on "syntax" being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false
-      }
+        local lang = vim.treesitter.language.get_lang(ft) or ft
+        pcall(vim.treesitter.start, buf, lang)
+      end,
     })
   end
 }
