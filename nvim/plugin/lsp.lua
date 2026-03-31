@@ -26,7 +26,7 @@ vim.lsp.config.lua_ls = {
 vim.lsp.enable({
   "gopls",
   "lua_ls",
-  "pylsp",
+  "basedpyright",
   "rust_analyzer",
   "terraformls",
 })
