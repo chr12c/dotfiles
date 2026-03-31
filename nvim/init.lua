@@ -66,6 +66,4 @@ vim.pack.add({
   "https://github.com/scalameta/nvim-metals",
   "https://github.com/mbbill/undotree",
   "https://github.com/tpope/vim-surround",
-  "https://github.com/rose-pine/neovim",
-  "https://github.com/maxmx03/solarized.nvim"
 })
