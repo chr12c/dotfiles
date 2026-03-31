@@ -19,8 +19,6 @@ vim.opt.listchars = { tab = "» ", trail = "∘" }
 vim.opt.list = true
 vim.opt.colorcolumn = "80"
 
-vim.g.netrw_bufsettings = "noma nomod nowrap ro nobl"
-
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 
