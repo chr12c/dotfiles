@@ -10,5 +10,5 @@ require("oil").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>ee", require("oil").open, { desc = "Open oil in parent dir of current buffer or cwd if not a file" })
-vim.keymap.set("n", "<leader>ep", function() require("oil").open(vim.fn.getcwd()) end, { desc = "Open oil in cwd" })
+vim.keymap.set("n", "<leader>e", require("oil").open, { desc = "Open oil in parent dir of current buffer or cwd if not a file" })
+vim.keymap.set("n", "<leader>E", function() require("oil").open(vim.fn.getcwd()) end, { desc = "Open oil in cwd" })
