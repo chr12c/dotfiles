@@ -1,2 +1,6 @@
-vim.keymap.set("n", "<leader>wd", function() require("diffview").open() end, { desc = "Open diffview against HEAD" })
-vim.keymap.set("n", "<leader>wD", function() require("diffview").open("master") end, { desc = "Open diffview against master" })
+vim.keymap.set("n", "<leader>wd", function()
+  vim.ui.input({ prompt = "Diff against ref: ", default = "HEAD" }, function(ref)
+    if not ref or ref == "" then return end
+    require("diffview").open(ref)
+  end)
+end, { desc = "Open diffview against a git ref" })
