@@ -50,6 +50,8 @@ vim.keymap.set("n", "<M-=>", "<C-w>+", { desc = "Increase current window height"
 vim.keymap.set("n", "<M-,>", "<C-w><", { desc = "Decrease current window width" })
 vim.keymap.set("n", "<M-.>", "<C-w>>", { desc = "Increase current window width" })
 
+vim.cmd("packadd nvim.undotree")
+
 vim.pack.add({
   "https://github.com/nvim-lua/plenary.nvim",
   "https://github.com/nvim-tree/nvim-web-devicons",
@@ -62,6 +64,5 @@ vim.pack.add({
   "https://github.com/mason-org/mason.nvim",
   "https://github.com/neovim/nvim-lspconfig",
   "https://github.com/scalameta/nvim-metals",
-  "https://github.com/mbbill/undotree",
   "https://github.com/tpope/vim-surround",
 })
