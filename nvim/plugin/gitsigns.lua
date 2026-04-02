@@ -39,7 +39,11 @@ require("gitsigns").setup({
     map("n", "<leader>ip", gitsigns.preview_hunk, { desc = "Git preview hunk" })
     map("n", "<leader>ib", gitsigns.blame, { desc = "Git blame" })
     map("n", "<leader>iB", function() gitsigns.blame_line({ full = true }) end, { desc = "Git blame line" })
-    map("n", "<leader>id", function() gitsigns.diffthis("@") end, { desc = "Git diff against HEAD" })
-    map("n", "<leader>iD", function() gitsigns.diffthis("master") end, { desc = "Git diff against master" })
+    map("n", "<leader>id", function()
+      vim.ui.input({ prompt = "Diff this file against ref: ", default = "HEAD" }, function(ref)
+        if not ref or ref == "" then return end
+        gitsigns.diffthis(ref)
+      end)
+    end, { desc = "Git diff this file against a git ref" })
   end,
 })
