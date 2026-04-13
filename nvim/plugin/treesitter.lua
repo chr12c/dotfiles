@@ -6,12 +6,9 @@ require("nvim-treesitter").install({
   "gosum",
   "java",
   "javascript",
-  "lua",
   "make",
   "python",
   "scala",
-  "vim",
-  "vimdoc",
 })
 
 local group = vim.api.nvim_create_augroup("TreesitterSetup", { clear = true })
