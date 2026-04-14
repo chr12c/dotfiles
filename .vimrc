@@ -1,5 +1,3 @@
-set nocompatible
-
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
