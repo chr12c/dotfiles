@@ -4,13 +4,11 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.mouse = "a"
-vim.opt.undofile = false
 vim.opt.swapfile = false
-vim.opt.backup = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.path:append("**")
-vim.opt.wildmode="noselect:full"
+vim.opt.wildmode = "noselect:full"
 vim.opt.completeopt:append({ "menuone", "noselect", "fuzzy" })
 vim.opt.scrolloff = 1
 vim.opt.updatetime = 50
