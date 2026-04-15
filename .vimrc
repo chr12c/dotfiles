@@ -1,8 +1,6 @@
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-set backspace=indent,eol,start
-
 set number
 set relativenumber
 
@@ -11,7 +9,6 @@ syntax enable
 "attempt to determine type of file and use intelligent auto-indenting,
 "combination of filetype on, filetype plugin on, filetype indent on
 filetype plugin indent on
-
 set autoindent
 
 set expandtab
@@ -20,8 +17,7 @@ set shiftwidth=4
 
 set mouse=a
 
-set noundofile
-set nobackup
+set hidden
 set noswapfile
 
 set hlsearch
@@ -29,16 +25,11 @@ set incsearch
 set ignorecase
 set smartcase
 
-set ruler
 set laststatus=2
 set belloff=all
 set scrolloff=1
 
-set hidden
-
-"allows searching into subdirectories recursively
 set path+=**
-
 set wildmode=noselect:full
 set wildoptions=pum,tagfile
 set completeopt+=menuone,noselect,fuzzy
