@@ -1,0 +1,16 @@
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false
+cursor-color = #ff06b5
+cursor-text = #000000
+font-family = Hack Nerd Font Mono
+scrollback-limit = 10000
+split-divider-color = #666666
+macos-option-as-alt = true
+
+keybind = ctrl+left_bracket=text:\x1b
+keybind = super+ctrl+h=goto_split:left
+keybind = super+ctrl+j=goto_split:down
+keybind = super+ctrl+k=goto_split:up
+keybind = super+ctrl+l=goto_split:right
+keybind = super+shift+b=write_scrollback_file:paste
