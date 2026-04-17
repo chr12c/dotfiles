@@ -1,40 +1,32 @@
-nnoremap <SPACE> <Nop>
-let mapleader=" "
-
 set number
 set relativenumber
-
-syntax enable
-
-"attempt to determine type of file and use intelligent auto-indenting,
-"combination of filetype on, filetype plugin on, filetype indent on
-filetype plugin indent on
 set autoindent
-
 set expandtab
 set tabstop=4
 set shiftwidth=4
-
 set mouse=a
-
 set hidden
 set noswapfile
-
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
 set laststatus=2
 set belloff=all
 set scrolloff=1
-
 set path+=**
 set wildmode=noselect:full
 set wildoptions=pum,tagfile
 set completeopt+=menuone,noselect,fuzzy
-
 set updatetime=50
+set list
+set listchars=tab:»\ ,trail:∘
+
+syntax enable
+filetype plugin indent on
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 nnoremap <leader>e :Explore<CR>
 let g:netrw_bufsettings = 'noma nomod nowrap ro nobl'
