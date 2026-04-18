@@ -16,6 +16,7 @@ vim.opt.guicursor = ""
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "∘" }
 vim.opt.colorcolumn = "80"
+vim.opt.winborder = "single"
 
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "

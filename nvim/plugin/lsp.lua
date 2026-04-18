@@ -1,7 +1,6 @@
 require("mason").setup()
 
 vim.diagnostic.config({ virtual_text = true })
-vim.o.winborder = "single"
 
 vim.lsp.config.gopls = {
   settings = {
