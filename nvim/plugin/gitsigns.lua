@@ -8,17 +8,17 @@ require("gitsigns").setup({
       vim.keymap.set(mode, l, r, opts)
     end
 
-    map("n", "<leader>i]", function()
+    map("n", "]c", function()
       if vim.wo.diff then
-        vim.cmd.normal({ "<leader>i]", bang = true })
+        vim.cmd.normal({ "]c", bang = true })
       else
         gitsigns.nav_hunk("next")
       end
     end)
 
-    map("n", "<leader>i[", function()
+    map("n", "[c", function()
       if vim.wo.diff then
-        vim.cmd.normal({ "<leader>i[", bang = true })
+        vim.cmd.normal({ "[c", bang = true })
       else
         gitsigns.nav_hunk("prev")
       end
