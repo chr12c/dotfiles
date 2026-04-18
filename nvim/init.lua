@@ -13,8 +13,8 @@ vim.opt.completeopt:append({ "menuone", "noselect", "fuzzy" })
 vim.opt.scrolloff = 1
 vim.opt.updatetime = 50
 vim.opt.guicursor = ""
-vim.opt.listchars = { tab = "» ", trail = "∘" }
 vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "∘" }
 vim.opt.colorcolumn = "80"
 
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
