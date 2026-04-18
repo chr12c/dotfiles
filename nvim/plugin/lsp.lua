@@ -42,27 +42,26 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client:supports_method("textDocument/completion") then
       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
     end
+
+    local opts = { buffer = ev.buf }
+
+    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "<leader>gD", function()
+      vim.cmd.vsplit()
+      vim.lsp.buf.definition()
+    end, { buffer = ev.buf, desc = "Go to definition (vsplit)" })
+    vim.keymap.set("n", "<leader>gs", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set("n", "<leader>gws", vim.lsp.buf.workspace_symbol, opts)
+    vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run, opts)
+    vim.keymap.set("n", "<F3>", vim.lsp.buf.format, opts)
   end,
 })
 
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "<leader>gD", function()
-  vim.cmd.vsplit()
-  vim.lsp.buf.definition()
-end, { desc = "Go to definition (vsplit)" })
-vim.keymap.set("n", "<leader>gs", vim.lsp.buf.signature_help)
-vim.keymap.set("n", "<leader>gws", vim.lsp.buf.workspace_symbol)
-vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run)
-vim.keymap.set("n", "<F3>", vim.lsp.buf.format)
-
 vim.keymap.set("n", "<leader>aa", vim.diagnostic.setqflist)
-
 vim.keymap.set("n", "<leader>ae", function()
   vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR })
 end)
-
 vim.keymap.set("n", "<leader>aw", function()
   vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARN })
 end)
-
 vim.keymap.set("n", "<leader>db", vim.diagnostic.setloclist)
